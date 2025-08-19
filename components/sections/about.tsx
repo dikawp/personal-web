@@ -106,8 +106,6 @@ export function AboutSection() {
         }
     ];
 
-
-
     return (
         <>
             <motion.section
@@ -117,9 +115,9 @@ export function AboutSection() {
                 className='mb-12 md:mt-5 dark:text-slate-800'>
                 <h1 className='text-2xl'>About Me</h1>
                 <hr className="border-t-1 border-dashed border-gray-400 my-4" />
-                <p className='mb-4'>Hello! I'm Ramadika Wijaya Poetra Subijanto, an Information Systems graduate from Telkom University Surabaya, earning Cumlaude honors with a GPA of 3.71/4.00.</p>
-                <p className='mb-4'>I'm a passionate fullstack developer with experience in building B2C web and mobile applications using Laravel, React Native, and .NET, alongside Firebase and SQL for data management. I'm also skilled in integrating secure payment gateways like Midtrans to ensure smooth, user-friendly transactions.</p>
-                <p>I enjoy creating solutions that are functional, intuitive, and impactful—covering both clean, engaging user interfaces and reliable backend systems. With strong leadership and organizational skills, I thrive in collaborative environments and am driven by continuous learning and innovation.</p>
+                <p className='mb-4'>Hello! I&apos;m Ramadika Wijaya Poetra Subijanto, an Information Systems graduate from Telkom University Surabaya, earning Cumlaude honors with a GPA of 3.71/4.00.</p>
+                <p className='mb-4'>I&apos;m a passionate fullstack developer with experience in building B2C web and mobile applications using Laravel, React Native, and .NET, alongside Firebase and SQL for data management. I&apos;m also skilled in integrating secure payment gateways like Midtrans to ensure smooth, user-friendly transactions.</p>
+                <p>I enjoy creating solutions that are functional, intuitive, and impactful&mdash;covering both clean, engaging user interfaces and reliable backend systems. With strong leadership and organizational skills, I thrive in collaborative environments and am driven by continuous learning and innovation.</p>
             </motion.section>
 
             <hr className="border-t-1 border-dashed border-gray-400 mb-8" />

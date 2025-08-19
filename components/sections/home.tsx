@@ -1,4 +1,5 @@
 'use client';
+
 import { motion } from 'framer-motion';
 import { FaNodeJs, FaGithub, FaLinkedin, FaCode } from 'react-icons/fa';
 import {
@@ -22,16 +23,18 @@ import {
     SiNextdotjs,
     SiVite
 } from "react-icons/si";
-import { TbBrandFramerMotion, TbBrandCSharp, TbBrandNpm } from "react-icons/tb"
+import { TbBrandFramerMotion, TbBrandCSharp, TbBrandNpm } from "react-icons/tb";
 import { MapPinHouse, User, Briefcase, Award, Mail, LayoutPanelLeft } from 'lucide-react';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { projects } from "@/lib/project";
 
 export const HomeSection = () => {
+    const router = useRouter();
+
     const skills = [
         { name: "HTML", icon: SiHtml5, colors: "from-orange-500 to-red-500" },
         { name: "CSS", icon: SiCss3, colors: "from-blue-400 to-blue-600" },
@@ -92,7 +95,7 @@ export const HomeSection = () => {
 
     return (
         <>
-            {/* About */}
+            {/* === About Section === */}
             <motion.section
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
@@ -102,7 +105,7 @@ export const HomeSection = () => {
                 <h1 className="text-2xl md:text-3xl">Hi, I'm Ramadika Wijaya P.S</h1>
                 <div className="md:flex gap-4 my-3">
                     <div className="flex mb-3 md:mb-0">
-                        <MapPinHouse size={24} strokeWidth={2} />
+                        <MapPinHouse size={24} />
                         <p className="text-gray-400 ms-2">Based in Surabaya, Indonesia</p>
                     </div>
                     <div className="flex">
@@ -111,7 +114,7 @@ export const HomeSection = () => {
                     </div>
                 </div>
                 <p className="leading-8 dark:text-gray-500">
-                    Fresh graduate in Information Systems from Telkom University Surabaya, graduating Cumlaude with a GPA of 3.71/4.00. Experienced in developing B2C web and mobile applications using Laravel, React Native, and .NET, Skilled in integrating payment gateways, collaborating within Agile/SCRUM teams, and delivering responsive, user-centered solutions. Proven leadership through active involvement in student organizations and event management.
+                    Fresh graduate in Information Systems from Telkom University Surabaya, graduating Cumlaude with a GPA of 3.71/4.00. Experienced in developing B2C web and mobile applications using Laravel, React Native, and .NET. Skilled in integrating payment gateways, collaborating within Agile/SCRUM teams, and delivering responsive, user-centered solutions. Proven leadership through active involvement in student organizations and event management.
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                     <a href="/CV-2(3).pdf">
@@ -129,7 +132,7 @@ export const HomeSection = () => {
                 <hr className='my-10' />
             </motion.section>
 
-            {/* Skills */}
+            {/* === Skills Section === */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -142,23 +145,20 @@ export const HomeSection = () => {
                     <h2 className="text-2xl md:text-2xl font-semibold ms-2">Skills</h2>
                 </div>
 
-                <div className="grid grid-cols-6 gap-4">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
                     {skills.map((skill, index) => {
-                        const IconComponent = skill.icon;
+                        const Icon = skill.icon;
                         return (
                             <motion.div
                                 key={skill.name}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                transition={{ duration: 0.5, delay: index * 0.05 }}
                                 viewport={{ once: true }}
-                                whileHover={{
-                                    scale: 1.05,
-                                    transition: { duration: 0.2 },
-                                }}
+                                whileHover={{ scale: 1.05 }}
                                 className="group"
                             >
-                                <Card className="bg-transparent shadow-none border-0 md:bg-slate-800 md:dark:bg-slate-200 md:border md:shadow-sm md:border-slate-700 md:dark:border-slate-400 md:hover:border-slate-600 transition-all duration-300">
+                                <Card className="bg-transparent shadow-none border-0 md:bg-slate-800 md:dark:bg-slate-200 md:border md:shadow-sm md:hover:border-slate-600 transition-all">
                                     <CardContent className="p-2 md:p-4 text-center">
                                         <motion.div
                                             whileHover={{
@@ -167,10 +167,9 @@ export const HomeSection = () => {
                                             }}
                                             className={`mx-auto bg-gradient-to-br ${skill.colors} inline-block p-2 rounded-full`}
                                         >
-                                            <IconComponent size={24} />
+                                            <Icon size={24} />
                                         </motion.div>
-                                        {/* Teks hanya muncul di md ke atas */}
-                                        <p className="hidden md:block text-[11px] font-medium text-slate-200 dark:text-slate-900">
+                                        <p className="hidden md:block text-[11px] font-medium text-slate-200 dark:text-slate-900 mt-1">
                                             {skill.name}
                                         </p>
                                     </CardContent>
@@ -183,7 +182,7 @@ export const HomeSection = () => {
 
             <hr className='my-10' />
 
-            {/* Featured */}
+            {/* === Featured Section === */}
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -204,21 +203,16 @@ export const HomeSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            whileHover={{
-                                scale: 1.05,
-                                transition: { duration: 0.2 },
-                            }}
+                            whileHover={{ scale: 1.05 }}
                             className={`
                                 ${index === 0 ? "md:col-span-4 md:row-span-2" : ""}
-                                ${index === 1 ? "md:col-span-2 md:row-span-1" : ""}
-                                ${index === 2 ? "md:col-span-2 md:row-span-1" : ""}
-                                ${index === 3 ? "md:col-span-6 md:row-span-1" : ""}
+                                ${index === 1 ? "md:col-span-2" : ""}
+                                ${index === 2 ? "md:col-span-2" : ""}
+                                ${index === 3 ? "md:col-span-6" : ""}
                                 h-full
-                            `}
-                        >
-                            {/* Card wrapper link → redirect ke /projects */}
-                            <Link href={sec.href || "/projects"} className="block h-full cursor-target">
-                                <Card className="bg-slate-800 dark:bg-slate-200 border-slate-700 dark:border-slate-400 hover:border-slate-600 transition-all duration-300 h-full flex flex-col justify-between">
+                            `}>
+                            <Link href={sec.href} className="block h-full cursor-target">
+                                <Card className="bg-slate-800 dark:bg-slate-200 border-slate-700 dark:border-slate-400 hover:border-slate-600 transition-all h-full flex flex-col">
                                     <CardHeader className="flex flex-col items-start space-y-2 pb-1">
                                         <motion.div
                                             whileHover={{
@@ -229,38 +223,34 @@ export const HomeSection = () => {
                                         >
                                             <sec.icon size={24} />
                                         </motion.div>
-                                        <CardTitle className="text-slate-200 dark:text-slate-900 group-hover:text-white dark:group-hover:text-black transition-colors">
+                                        <CardTitle className="text-slate-200 dark:text-slate-900">
                                             {sec.title}
                                         </CardTitle>
                                     </CardHeader>
 
                                     <CardContent className="pt-0 flex flex-col h-full">
-                                        <p className="text-sm text-slate-400 dark:text-slate-700 group-hover:text-slate-200 dark:group-hover:text-black transition-colors">
+                                        <p className="text-sm text-slate-400 dark:text-slate-700">
                                             {sec.desc}
                                         </p>
 
-                                        {/* Project Showcase special case */}
                                         {sec.title === "Project Showcase" && (
                                             <div className="hidden mt-6 md:grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                                {projects.slice(0, 2).map((project) => {
-                                                    const router = useRouter();
-                                                    return (
-                                                        <div
-                                                            key={project.slug}
-                                                            onClick={(e) => {
-                                                                e.preventDefault();
-                                                                router.push(`/projects/${project.slug}`);
-                                                            }}
-                                                            className="cursor-target"
-                                                        >
-                                                            <img
-                                                                src={project.image}
-                                                                alt={project.title}
-                                                                className="rounded-lg h-[160] border border-slate-700 dark:border-slate-400 hover:scale-105 transition-transform duration-300"
-                                                            />
-                                                        </div>
-                                                    );
-                                                })}
+                                                {projects.slice(0, 2).map((project) => (
+                                                    <div
+                                                        key={project.slug}
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            router.push(`/projects/${project.slug}`);
+                                                        }}
+                                                        className="cursor-target"
+                                                    >
+                                                        <img
+                                                            src={project.image}
+                                                            alt={project.title}
+                                                            className="rounded-lg h-[160px] w-full object-cover border border-slate-700 dark:border-slate-400 hover:scale-105 transition-transform"
+                                                        />
+                                                    </div>
+                                                ))}
                                             </div>
                                         )}
                                     </CardContent>

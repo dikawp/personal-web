@@ -1,4 +1,3 @@
-import { Sidebar } from "@/components/sidebar";
 import { MainContent } from "@/components/main-content";
 import { AboutSection } from "@/components/sections/about";
 
