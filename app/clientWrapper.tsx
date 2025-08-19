@@ -20,7 +20,7 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
   return (
     <>
       {showCursor && (
-        <TargetCursor spinDuration={3} hideDefaultCursor={true} />
+        <TargetCursor spinDuration={2} hideDefaultCursor={true} />
       )}
       {children}
     </>

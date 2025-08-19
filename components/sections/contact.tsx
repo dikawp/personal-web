@@ -50,8 +50,8 @@ export const ContactSection = () => {
       className="mb-12 md:mt-5"
     >
       {/* Title */}
-      <h1 className="text-2xl font-bold mb-2 dark:text-slate-800">Contact</h1>
-      <p className="text-gray-500 dark:text-slate-700 mb-8">Let’s get in touch</p>
+      <h1 className="text-2xl font-bold mb-2">Contact</h1>
+      <p className="mb-8">Let&apos;s get in touch</p>
       <hr className="border-t border-dashed border-gray-400 my-5" />
 
       {/* Grid */}
@@ -72,7 +72,7 @@ export const ContactSection = () => {
 
             {/* Button & Icon */}
             <div className="flex items-center justify-between mt-4">
-              <span className="bg-white text-black text-sm px-3 py-2 rounded-md font-medium hover:opacity-90">
+              <span className="bg-white text-black text-sm px-3 py-2 rounded-md font-medium hover:opacity-80">
                 {c.btn} <ImArrowUpRight2 className="inline ml-1" />
               </span>
               {c.icon}

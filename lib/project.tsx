@@ -19,6 +19,19 @@ export const projects = [
     demo: 'https://kana-learning-three.vercel.app/',
   },
   {
+    slug: 'sistem-sekolah',
+    title: 'Sistem Administrasi Pembayaran Sekolah',
+    description: 'A web-based system for managing school payment administration, featuring structured payment records and financial recap reports.',
+    image: '/projects/siaps.webp',
+    tech: [
+      <SiPhp key="php" />,
+      <SiLaravel key="laravel" />,
+      <TbBrandMysql key="mysql" />,
+      <SiBootstrap key="bootstrap" />,
+    ],
+    link: '/projects/sistem-sekolah'
+  },
+  {
     slug: 'helpdesk',
     title: 'Help Desk - Surabaya Tax',
     description: 'Help Desk is a web application designed to assist users in managing and resolving issues related to Surabaya Tax services. It provides a platform for users to submit inquiries, track their status, and receive assistance from support staff.',

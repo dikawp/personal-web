@@ -16,7 +16,7 @@ export const CertificateSection = () => {
       className="mb-12 md:mt-5"
     >
       <h1 className="text-2xl font-medium mb-2">Certificate</h1>
-      <p className="text-sm text-slate-300 dark:text-slate-600">
+      <p className="text-sm">
         A selected showcase of certificates and badges I have obtained during my academic and professional journey.
       </p>
       <hr className="border-t border-dashed border-gray-400 my-5" />
@@ -26,7 +26,7 @@ export const CertificateSection = () => {
         {certificates.map((cert) => (
           <div
             key={cert.id}
-            className="group relative flex flex-col bg-slate-800 dark:bg-slate-200 rounded-md overflow-hidden shadow-md cursor-target"
+            className="bg-slate-200 dark:bg-slate-700 group relative flex flex-col rounded-md overflow-hidden shadow-md cursor-target"
             onClick={() => window.open(cert.link, "_blank")}
           >
             {/* Gambar */}
@@ -39,7 +39,7 @@ export const CertificateSection = () => {
               />
 
               {/* Overlay Hover */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-500 ease-in-out will-change-opacity">
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-500 ease-in-out will-change-opacity">
                 <span className="text-white text-sm font-medium tracking-wide">
                   Show Credential →
                 </span>

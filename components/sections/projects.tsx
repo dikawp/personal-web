@@ -15,7 +15,7 @@ export const ProjectSection = () => {
         className="mb-8 md:mt-5"
       >
         <h1 className="text-2xl font-medium mb-2">Projects</h1>
-        <p className="text-sm text-slate-300 dark:text-slate-600">
+        <p className="text-sm">
           A collection of both private and open-source projects I have developed or contributed to.
         </p>
 
@@ -23,8 +23,8 @@ export const ProjectSection = () => {
 
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
           {projects.map((project) => (
-            <Link key={project.slug} href={project.link} className="block h-full cursor-target">
-              <div className="group flex flex-col bg-slate-800 dark:bg-gray-200 rounded-md overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-transform duration-300">
+            <Link key={project.slug} href={project.link} className="rounded-md block h-full cursor-target bg-slate-200 dark:bg-slate-700">
+              <div className="group flex flex-col rounded-md overflow-hidden hover:shadow-lg transition-transform duration-300">
                 {/* Gambar */}
                 <div className="relative w-full h-48 overflow-hidden">
                   <Image
@@ -46,10 +46,10 @@ export const ProjectSection = () => {
                   <p className="text-sm text-gray-400 line-clamp-1">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-2 mt-3 text-xl text-slate-700 dark:text-slate-500">
+                  <div className="flex items-center gap-2 mt-3 text-xl">
                     {project.tech.map((icon, i) => (
                       <span
-                        className="text-slate-400 dark:text-slate-600 text-xl"
+                        className="text-xl"
                         key={i}
                       >
                         {icon}
@@ -68,7 +68,7 @@ export const ProjectSection = () => {
         <Link
           href="https://github.com/dikawp"
           target="_blank"
-          className="cursor-target flex items-center justify-between p-5 rounded-md bg-gray-800 dark:bg-gray-200 text-gray-300 dark:text-slate-700 hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+          className="bg-slate-200 dark:bg-slate-700 cursor-target flex items-center justify-between p-5 rounded-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
         >
           <h2 className="text-lg font-semibold">More in Github</h2>
           <div className="flex items-center gap-2">

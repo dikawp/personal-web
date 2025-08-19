@@ -113,12 +113,12 @@ export const HomeSection = () => {
                         <p className="text-gray-400 ms-2">Fullstack Website Developer</p>
                     </div>
                 </div>
-                <p className="leading-8 dark:text-gray-500">
+                <p className="leading-8">
                     Fresh graduate in Information Systems from Telkom University Surabaya, graduating Cumlaude with a GPA of 3.71/4.00. Experienced in developing B2C web and mobile applications using Laravel, React Native, and .NET. Skilled in integrating payment gateways, collaborating within Agile/SCRUM teams, and delivering responsive, user-centered solutions. Proven leadership through active involvement in student organizations and event management.
                 </p>
                 <div className="flex items-center gap-2 mt-3">
                     <a href="/CV-2(3).pdf">
-                        <Button variant="outline" className="bg-slate-900 dark:bg-slate-300 cursor-target">
+                        <Button variant="outline" className="cursor-target dark:bg-slate-700">
                             Download CV
                         </Button>
                     </a>
@@ -145,7 +145,7 @@ export const HomeSection = () => {
                     <h2 className="text-2xl md:text-2xl font-semibold ms-2">Skills</h2>
                 </div>
 
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+                <div className="grid grid-cols-6 gap-4">
                     {skills.map((skill, index) => {
                         const Icon = skill.icon;
                         return (
@@ -158,7 +158,7 @@ export const HomeSection = () => {
                                 whileHover={{ scale: 1.05 }}
                                 className="group"
                             >
-                                <Card className="bg-transparent shadow-none border-0 md:bg-slate-800 md:dark:bg-slate-200 md:border md:shadow-sm md:hover:border-slate-600 transition-all">
+                                <Card className="bg-transparent shadow-none border-0 md:border md:shadow-sm md:hover:border-slate-600 transition-all">
                                     <CardContent className="p-2 md:p-4 text-center">
                                         <motion.div
                                             whileHover={{
@@ -169,7 +169,7 @@ export const HomeSection = () => {
                                         >
                                             <Icon size={24} />
                                         </motion.div>
-                                        <p className="hidden md:block text-[11px] font-medium text-slate-200 dark:text-slate-900 mt-1">
+                                        <p className="hidden md:block text-[11px] font-medium mt-1">
                                             {skill.name}
                                         </p>
                                     </CardContent>
@@ -212,7 +212,7 @@ export const HomeSection = () => {
                                 h-full
                             `}>
                             <Link href={sec.href} className="block h-full cursor-target">
-                                <Card className="bg-slate-800 dark:bg-slate-200 border-slate-700 dark:border-slate-400 hover:border-slate-600 transition-all h-full flex flex-col">
+                                <Card className="transition-all h-full flex flex-col">
                                     <CardHeader className="flex flex-col items-start space-y-2 pb-1">
                                         <motion.div
                                             whileHover={{
@@ -223,13 +223,13 @@ export const HomeSection = () => {
                                         >
                                             <sec.icon size={24} />
                                         </motion.div>
-                                        <CardTitle className="text-slate-200 dark:text-slate-900">
+                                        <CardTitle>
                                             {sec.title}
                                         </CardTitle>
                                     </CardHeader>
 
                                     <CardContent className="pt-0 flex flex-col h-full">
-                                        <p className="text-sm text-slate-400 dark:text-slate-700">
+                                        <p className="text-sm">
                                             {sec.desc}
                                         </p>
 
@@ -247,7 +247,7 @@ export const HomeSection = () => {
                                                         <img
                                                             src={project.image}
                                                             alt={project.title}
-                                                            className="rounded-lg h-[160px] w-full object-cover border border-slate-700 dark:border-slate-400 hover:scale-105 transition-transform"
+                                                            className="rounded-lg h-[160px] w-full object-cover border hover:scale-105 transition-transform"
                                                         />
                                                     </div>
                                                 ))}

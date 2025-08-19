@@ -28,9 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full overflow-x-hidden transition-colors duration-300 bg-gray-900 text-gray-100 dark:bg-gray-100 dark:text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-full overflow-x-hidden transition-colors duration-300`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="flex min-h-screen md:mx-44">
             <Sidebar />
             <main className="flex-1 pt-16 md:pt-0">
