@@ -1,11 +1,11 @@
 import { Sidebar } from "@/components/sidebar";
 import { MainContent } from "@/components/main-content";
-import { HomeSection } from "@/components/sections/home";
+import { CertificateSection } from "@/components/sections/certificate";
 
-export default function Home() {
+export default function CertificatePage() {
   return (
     <MainContent>
-      <HomeSection />
+      <CertificateSection />
     </MainContent>
   );
 }

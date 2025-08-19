@@ -1,11 +1,11 @@
 import { Sidebar } from "@/components/sidebar";
 import { MainContent } from "@/components/main-content";
-import { HomeSection } from "@/components/sections/home";
+import { AboutSection } from "@/components/sections/about";
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <MainContent>
-      <HomeSection />
+      <AboutSection />
     </MainContent>
   );
 }
