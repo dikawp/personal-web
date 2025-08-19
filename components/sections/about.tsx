@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, Mail, Github, Instagram } from 'lucide-react';
+import Image from "next/image";
 
 export function AboutSection() {
     const experiences = [
@@ -138,9 +139,11 @@ export function AboutSection() {
                             <CardHeader className="pb-2">
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                                     <div className="flex items-center gap-3">
-                                        <img
+                                        <Image
                                             src={exp.logo}
                                             alt={`${exp.company} logo`}
+                                            width={40}
+                                            height={40}
                                             className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-gray-600 dark:border-gray-300"
                                         />
                                         <div>

@@ -102,7 +102,7 @@ export const HomeSection = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="mb-12 md:mt-5"
             >
-                <h1 className="text-2xl md:text-3xl">Hi, I'm Ramadika Wijaya P.S</h1>
+                <h1 className="text-2xl md:text-3xl">Hi, I&apos;m Ramadika Wijaya P.S</h1>
                 <div className="md:flex gap-4 my-3">
                     <div className="flex mb-3 md:mb-0">
                         <MapPinHouse size={24} />
@@ -110,7 +110,7 @@ export const HomeSection = () => {
                     </div>
                     <div className="flex">
                         <FaCode size={24} />
-                        <p className="text-gray-400 ms-2">Full-stack Website Developer</p>
+                        <p className="text-gray-400 ms-2">Fullstack Website Developer</p>
                     </div>
                 </div>
                 <p className="leading-8 dark:text-gray-500">

@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { VscVerifiedFilled } from "react-icons/vsc";
+import Image from "next/image";
 
 export const Sidebar = () => {
     const pathname = usePathname();
@@ -20,27 +21,29 @@ export const Sidebar = () => {
 
     const toggleSidebar = () => setIsOpen(!isOpen);
 
-    const menuItems = [
-        { name: "Home", icon: <House size={18} />, path: "/" },
-        { name: "About", icon: <User size={18} />, path: "/about" },
-        { name: "Projects", icon: <FolderGit size={18} />, path: "/projects" },
-        { name: "Certificate", icon: <FileBadge size={18} />, path: "/certificate" },
-        { name: "Contact", icon: <Phone size={18} />, path: "/contact" },
-    ];
-
     // Jangan render sebelum mounted untuk menghindari hydration mismatch
     if (!mounted) return null;
 
     return (
         <>
             {/* MOBILE NAVBAR */}
-            <div className="flex md:hidden items-center justify-between p-4 text-white dark:text-gray-900 
-                      fixed top-0 left-0 right-0 z-50 transition-colors duration-500 backdrop-blur-md">
+            <div
+                className="flex md:hidden items-center justify-between p-4 text-white dark:text-gray-900 
+                      fixed top-0 left-0 right-0 z-50 transition-colors duration-500 backdrop-blur-md"
+            >
                 {/* Left */}
                 <div className="flex items-center gap-2">
-                    <img src="/image/foto_prib.JPG" alt="Foto Pribadi" className="w-8 h-8 rounded-full object-cover" />
+                    <Image
+                        width={32}
+                        height={32}
+                        src="/image/foto_prib.JPG"
+                        alt="Foto Pribadi"
+                        className="w-8 h-8 rounded-full object-cover"
+                    />
                     <span className="font-medium">Ramadika Wijaya</span>
-                    <span><VscVerifiedFilled size={20} className="text-blue-500" /></span>
+                    <span>
+                        <VscVerifiedFilled size={20} className="text-blue-500" />
+                    </span>
                 </div>
 
                 {/* Right */}
@@ -52,7 +55,10 @@ export const Sidebar = () => {
                         {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
                     </button>
 
-                    <button onClick={toggleSidebar} className="p-2 rounded-md hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-500">
+                    <button
+                        onClick={toggleSidebar}
+                        className="p-2 rounded-md hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-500"
+                    >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
@@ -70,7 +76,12 @@ export const Sidebar = () => {
                         className="fixed top-0 left-0 w-60 h-screen z-40 p-6 shadow-xl pt-16 
                        bg-gray-900/90 dark:bg-gray-100/90 transition-colors duration-500 backdrop-blur-md md:hidden"
                     >
-                        <SidebarContent pathname={pathname} theme={theme} setTheme={setTheme} onClose={() => setIsOpen(false)} />
+                        <SidebarContent
+                            pathname={pathname}
+                            theme={theme}
+                            setTheme={setTheme}
+                            onClose={() => setIsOpen(false)}
+                        />
                     </motion.aside>
                 )}
             </AnimatePresence>
@@ -81,13 +92,30 @@ export const Sidebar = () => {
             </aside>
 
             {/* BACKDROP */}
-            {isOpen && <div className="fixed inset-0 bg-black/50 z-30 md:hidden" onClick={toggleSidebar} />}
+            {isOpen && (
+                <div
+                    className="fixed inset-0 bg-black/50 z-30 md:hidden"
+                    onClick={toggleSidebar}
+                />
+            )}
         </>
     );
 };
 
+interface SidebarContentProps {
+    pathname: string | null;
+    theme: string | undefined;
+    setTheme: (theme: string) => void;
+    onClose?: () => void;
+}
+
 // Extracted content biar DRY
-function SidebarContent({ pathname, theme, setTheme, onClose }: any) {
+function SidebarContent({
+    pathname,
+    theme,
+    setTheme,
+    onClose,
+}: SidebarContentProps) {
     const menuItems = [
         { name: "Home", icon: <House size={18} />, path: "/" },
         { name: "About", icon: <User size={18} />, path: "/about" },
@@ -99,13 +127,24 @@ function SidebarContent({ pathname, theme, setTheme, onClose }: any) {
     return (
         <>
             <div className="my-5 flex flex-col items-center">
-                <img src="/image/foto_prib.JPG" alt="Foto Pribadi"
+                <Image
+                    src="/image/foto_prib.JPG"
+                    alt="Foto Pribadi"
+                    width={80}
+                    height={80}
                     className="hidden md:block w-20 h-20 object-cover rounded-full 
-                     border-2 border-white dark:border-gray-800 transition-colors duration-500" />
-                <Link href="/" className="hidden md:block text-xl font-medium mt-3 dark:text-gray-900 transition-colors duration-500">
+                     border-2 border-white dark:border-gray-800 transition-colors duration-500"
+                />
+                <Link
+                    href="/"
+                    className="hidden md:block text-xl font-medium mt-3 dark:text-gray-900 transition-colors duration-500"
+                >
                     Ramadika Wijaya
                 </Link>
-                <Link href="https://github.com/dikawp" className="md:hidden text-sm mt-1 ms-2 text-gray-400 dark:text-gray-600 transition-colors duration-500">
+                <Link
+                    href="https://github.com/dikawp"
+                    className="md:hidden text-sm mt-1 ms-2 text-gray-400 dark:text-gray-600 transition-colors duration-500"
+                >
                     @dikawp
                 </Link>
                 <button
@@ -128,7 +167,7 @@ function SidebarContent({ pathname, theme, setTheme, onClose }: any) {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={onClose}
-                            className='cursor-target'
+                            className="cursor-target"
                         >
                             <Link
                                 href={item.path}
@@ -138,9 +177,16 @@ function SidebarContent({ pathname, theme, setTheme, onClose }: any) {
                                         : "text-gray-300 dark:text-gray-600 hover:text-white dark:hover:text-gray-900 hover:bg-gray-700 dark:hover:bg-gray-300"
                                     }`}
                             >
-                                <span className="group-hover:scale-110 transition-transform duration-200">{item.icon}</span>
+                                <span className="group-hover:scale-110 transition-transform duration-200">
+                                    {item.icon}
+                                </span>
                                 <span className="font-medium text-sm">{item.name}</span>
-                                <motion.span className="ml-auto opacity-0 group-hover:opacity-100" initial={{ x: -10 }} animate={{ x: 0 }} transition={{ duration: 0.2 }}>
+                                <motion.span
+                                    className="ml-auto opacity-0 group-hover:opacity-100"
+                                    initial={{ x: -10 }}
+                                    animate={{ x: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                >
                                     →
                                 </motion.span>
                             </Link>
@@ -153,17 +199,17 @@ function SidebarContent({ pathname, theme, setTheme, onClose }: any) {
 
             <div className="text-gray-400 dark:text-gray-600 text-sm text-center transition-colors duration-500">
                 <div className="flex justify-between mb-4">
-                    <Link href="https://github.com/dikawp">
-                        <SiGmail size={30} className="ms-2 hover:text-slate-400 cursor-target" />
+                    <Link href="mailto:ramadika380@gmail.com">
+                        <SiGmail size={24} className="ms-2 hover:text-slate-400 cursor-target" />
                     </Link>
                     <Link href="https://www.linkedin.com/in/ramadika-wijaya-poetra-s-9b9b74221/">
-                        <FaLinkedin size={30} className="ms-2 hover:text-slate-400 cursor-target" />
+                        <FaLinkedin size={24} className="ms-2 hover:text-slate-400 cursor-target" />
+                    </Link>
+                    <Link href="https://instagram.com/dikawp_16">
+                        <FaInstagram size={24} className="ms-2 hover:text-slate-400 cursor-target" />
                     </Link>
                     <Link href="https://github.com/dikawp">
-                        <FaInstagram size={30} className="ms-2 hover:text-slate-400 cursor-target" />
-                    </Link>
-                    <Link href="https://www.linkedin.com/in/ramadika-wijaya-poetra-s-9b9b74221/">
-                        <FaGithub size={30} className="ms-2 hover:text-slate-400 cursor-target" />
+                        <FaGithub size={24} className="ms-2 hover:text-slate-400 cursor-target" />
                     </Link>
                 </div>
                 <p>© 2025 Ramadika Wijaya</p>
