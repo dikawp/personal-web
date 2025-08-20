@@ -16,7 +16,7 @@ export const projects = [
       <SiTailwindcss key="tailwind" />,
     ],
     link: '/projects/kana-learning',
-    demo: 'https://kana-learning-three.vercel.app/',
+    demo: 'https://kanalearn.vercel.app/',
   },
   {
     slug: 'sistem-sekolah',
