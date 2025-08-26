@@ -86,7 +86,7 @@ export const Sidebar = () => {
 
             {/* BACKDROP */}
             {isOpen && (
-                <div className="fixed inset-0 z-30 md:hidden" onClick={toggleSidebar} />
+                <div className="fixed inset-0 z-30 bg-white/50 dark:bg-black/50 md:hidden" onClick={toggleSidebar} />
             )}
         </>
     );
@@ -163,18 +163,22 @@ function SidebarContent({
                                 <Link
                                     href={item.path}
                                     className={`flex items-center gap-3 px-2 py-3 rounded-lg transition-all duration-300 group ${isActive
-                                        ? "bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-slate-100 font-semibold"
-                                        : "hover:bg-slate-100 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300"
-                                        }`}>
-                                    <span className={`transition-transform duration-200 group-hover:scale-11 ${isActive
-                                        ? "text-slate-900 dark:text-slate-100"
-                                        : "text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-200"
-                                        }`}>
+                                            ? "bg-slate-300 dark:bg-slate-700 text-slate-900 dark:text-slate-100 font-semibold"
+                                            : "text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
+                                        }`}
+                                >
+                                    <span
+                                        className={`transition-transform duration-200 group-hover:scale-110 ${isActive
+                                                ? "text-slate-900 dark:text-slate-100"
+                                                : "text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-200"
+                                            }`}
+                                    >
                                         {item.icon}
                                     </span>
                                     <span className="font-medium text-sm">{item.name}</span>
                                     <motion.span
-                                        className={`ml-auto ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                                        className={`ml-auto ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                                            }`}
                                         initial={{ x: -10 }}
                                         animate={{ x: 0 }}
                                         transition={{ duration: 0.2 }}
