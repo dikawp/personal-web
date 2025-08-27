@@ -83,7 +83,7 @@ export const ContactSection = () => {
       {/* Download CV Section */}
       <div className="mt-5">
         <a
-          href="/file/CV-RamadikaWijaya.pdf" // ganti dengan path CV kamu
+          href="/CV-2(3).pdf" // ganti dengan path CV kamu
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-target flex items-center justify-between bg-gradient-to-r from-green-500 to-emerald-700 text-white p-6 rounded-md hover:text-slate-200 hover:scale-[1.02] transition-transform"
