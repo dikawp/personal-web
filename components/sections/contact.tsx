@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
 import { ImArrowUpRight2 } from "react-icons/im";
 import { SiGmail } from 'react-icons/si';
 
@@ -39,10 +39,8 @@ const contacts = [
   },
 ];
 
-
 export const ContactSection = () => {
   return (
-    
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -62,7 +60,7 @@ export const ContactSection = () => {
             href={c.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`cursor-target relative rounded-sm p-4 flex flex-col justify-between bg-gradient-to-r ${c.bg} text-white hover:scale-[1.02] transition-transform`}
+            className={`cursor-target relative rounded-sm p-4 flex flex-col justify-between bg-gradient-to-r ${c.bg} text-white hover:text-slate-200 hover:scale-[1.02] transition-transform`}
           >
             {/* Text */}
             <div>
@@ -79,6 +77,25 @@ export const ContactSection = () => {
             </div>
           </a>
         ))}
+      </div>
+      <hr className="border-t border-dashed border-gray-400 my-5" />
+
+      {/* Download CV Section */}
+      <div className="mt-5">
+        <a
+          href="/file/CV-RamadikaWijaya.pdf" // ganti dengan path CV kamu
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-target flex items-center justify-between bg-gradient-to-r from-green-500 to-emerald-700 text-white p-6 rounded-md hover:text-slate-200 hover:scale-[1.02] transition-transform"
+        >
+          <div>
+            <h3 className="text-2xl font-semibold mb-2">Download CV</h3>
+            <p className="text-sm opacity-90">
+              Access my latest curriculum vitae for more details about my background and experiences.
+            </p>
+          </div>
+          <FaDownload className="text-white text-4xl ml-4" />
+        </a>
       </div>
     </motion.section>
   );

@@ -10,6 +10,20 @@ export function AboutSection() {
         // Freelance
         {
             title: "Web Developer Freelance",
+            company: "Yayasan Pendidikan Likawati",
+            logo: "/image/logo.webp",
+            date: "May 2025 - Aug 2025",
+            type: "Freelance",
+            bullets: [
+                "Developed a school administration payment information system using Laravel framework with structured MVC architecture",
+                "Implemented features for student payment tracking, reporting, and receipt generation to streamline financial management",
+                "Collaborated with school management to analyze requirements and deliver a tailored solution within deadlines"
+            ],
+        },
+
+        // Freelance
+        {
+            title: "Web Developer Freelance",
             company: "CV Anugerah Sukses Sejahtera",
             logo: "/image/anugerah.webp",
             date: "Jun 2025 - Jul 2025",
@@ -193,7 +207,7 @@ export function AboutSection() {
                                 href="https://www.linkedin.com/in/ramadika-wijaya-poetra-s-9b9b74221/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors"
+                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors cursor-target"
                             >
                                 <Linkedin className="w-5 h-5" />
                                 <span className="text-xs text-center">LinkedIn</span>
@@ -202,7 +216,7 @@ export function AboutSection() {
                             {/* Email */}
                             <a
                                 href="mailto:ramadika380@gmail.com"
-                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors"
+                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors cursor-target"
                             >
                                 <Mail className="w-5 h-5 mb-1.5" />
                                 <span className="text-xs text-center">Email</span>
@@ -213,7 +227,7 @@ export function AboutSection() {
                                 href="https://github.com/dikawp"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors"
+                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors cursor-target"
                             >
                                 <Github className="w-5 h-5 mb-1.5" />
                                 <span className="text-xs text-center">GitHub</span>
@@ -224,7 +238,7 @@ export function AboutSection() {
                                 href="https://www.instagram.com/dikawp_16/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors"
+                                className="flex flex-col items-center justify-center p-3 rounded-lg transition-colors cursor-target"
                             >
                                 <Instagram className="w-5 h-5 mb-1.5" />
                                 <span className="text-xs text-center">Instagram</span>

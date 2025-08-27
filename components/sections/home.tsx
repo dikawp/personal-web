@@ -25,7 +25,6 @@ import {
 } from "react-icons/si";
 import { TbBrandFramerMotion, TbBrandCSharp, TbBrandNpm } from "react-icons/tb";
 import { MapPinHouse, User, Briefcase, Award, Mail, LayoutPanelLeft } from 'lucide-react';
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';

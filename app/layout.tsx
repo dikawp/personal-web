@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "DKWP | Personal Portfolio",
   description:
-    "Explore the personal portfolio of DKWP, a fullstack web developer specializing in modern web technologies including Next.js, React, and Tailwind CSS.",
+    "Explore DKWP’s portfolio: a fullstack web developer skilled in Next.js, React, and Tailwind CSS.",
   keywords: [
     "DKWP",
     "Portfolio",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     "TypeScript",
   ],
   authors: [{ name: "Ramadika Wijaya" }],
-  creator: "DKWP",
-  publisher: "DKWP",
+  creator: "DIKAWP",
+  publisher: "DIKAWP",
   robots: {
     index: true,
     follow: true,
@@ -46,14 +46,29 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "DKWP | Personal Portfolio",
-    description:
-      "Showcasing DKWP’s projects, experience, and skills as a fullstack web developer.",
+    description: "Showcasing DKWP’s projects, experience, and skills as a fullstack web developer.",
     url: "https://dikawp.vercel.app/",
     siteName: "Ramadika Wijaya Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://dikawp.vercel.app/image/OG.png", // taruh gambar di public/image/preview.png
+        width: 1200,
+        height: 630,
+        alt: "DKWP Portfolio Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DKWP | Personal Portfolio",
+    description:
+      "Discover DKWP’s journey as a fullstack web developer specializing in modern web technologies.",
+    images: ["https://dikawp.vercel.app/image/OG.png"],
   },
 };
+
 
 
 export default function RootLayout({
