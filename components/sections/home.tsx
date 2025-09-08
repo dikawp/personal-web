@@ -116,7 +116,10 @@ export const HomeSection = () => {
                     Fresh graduate in Information Systems from Telkom University Surabaya, graduating Cumlaude with a GPA of 3.71/4.00. Experienced in developing B2C web and mobile applications using Laravel, React Native, and .NET. Skilled in integrating payment gateways, collaborating within Agile/SCRUM teams, and delivering responsive, user-centered solutions. Proven leadership through active involvement in student organizations and event management.
                 </p>
                 <div className="flex items-center gap-2 mt-3">
-                    <a href="/CV-2(3).pdf">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="/CV-2(3).pdf">
                         <Button variant="outline" className="cursor-target dark:bg-slate-700">
                             Download CV
                         </Button>

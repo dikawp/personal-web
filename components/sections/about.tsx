@@ -26,7 +26,7 @@ export function AboutSection() {
             title: "Web Developer Freelance",
             company: "CV Anugerah Sukses Sejahtera",
             logo: "/image/anugerah.webp",
-            date: "Jun 2025 - Jul 2025",
+            date: "May 2025 - Jul 2025",
             type: "Freelance",
             bullets: [
                 "Developed B2C websites using Laravel framework with responsive UI and optimized backend structure",
