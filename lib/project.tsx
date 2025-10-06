@@ -6,6 +6,18 @@ import { LuBird } from 'react-icons/lu';
 
 export const projects = [
   {
+    slug: 'compro-rajawali',
+    title: 'Company Profile - PT. RAJAWALI CHAKTI UTAMA',
+    description: 'company profile website for PT. Rajawali Chakti Utama, a construction services company based in Surabaya, Indonesia. Built with Laravel and Tailwind CSS for a modern and responsive design.',
+    image: '/projects/compro.webp',
+    tech: [
+      <SiLaravel key="nextjs" />,
+      <SiTailwindcss key="tailwind" />,
+    ],
+    link: '/projects/compro-rajawali',
+    demo: 'https://ptrcu.com/',
+  },
+  {
     slug: 'kana-learning',
     title: 'Kana Learning',
     description: 'Kana Learning is a web application designed to help users learn the Kana writing system used in the Japanese language. It provides interactive lessons, quizzes, and resources to facilitate effective learning.',
@@ -141,6 +153,7 @@ export const projects = [
       <RiCss3Fill key="css" />,
       <RiJavascriptFill key="js" />
     ],
-    link: '/projects/bandai'
+    link: '/projects/bandai',
+    demo: 'https://dikawp.github.io/uts-bandai/'
   },
 ];

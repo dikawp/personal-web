@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence  } from 'framer-motion';
 import { FaNodeJs, FaGithub, FaLinkedin, FaCode } from 'react-icons/fa';
 import {
     SiHtml5,
@@ -30,9 +30,24 @@ import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { projects } from "@/lib/project";
+import { useState, useEffect } from 'react';
 
 export const HomeSection = () => {
     const router = useRouter();
+
+    const [displayedProjects, setDisplayedProjects] = useState<typeof projects>([]);
+
+    useEffect(() => {
+        const updateProjects = () => {
+            const shuffled = [...projects].sort(() => 0.5 - Math.random());
+            setDisplayedProjects(shuffled.slice(0, 2));
+        };
+
+        updateProjects();
+
+        const intervalId = setInterval(updateProjects, 2000);
+        return () => clearInterval(intervalId);
+    }, []);
 
     const skills = [
         { name: "HTML", icon: SiHtml5, colors: "from-orange-500 to-red-500" },
@@ -237,7 +252,7 @@ export const HomeSection = () => {
 
                                         {sec.title === "Project Showcase" && (
                                             <div className="hidden mt-6 md:grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                                {projects.slice(0, 2).map((project) => (
+                                                {displayedProjects.map((project) => (
                                                     <div
                                                         key={project.slug}
                                                         onClick={(e) => {
