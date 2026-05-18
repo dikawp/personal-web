@@ -101,10 +101,5 @@
   .card {
     @apply bg-card text-card-foreground border rounded-lg shadow-sm p-4;
   }
-
-  @screen md {
-    a, button {
-      cursor: none !important;
-    }
-  }
 }
+

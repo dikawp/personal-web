@@ -135,7 +135,7 @@ export const HomeSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         href="/CV-2(3).pdf">
-                        <Button variant="outline" className="cursor-target dark:bg-slate-700">
+                        <Button variant="outline" className="dark:bg-slate-700">
                             Download CV
                         </Button>
                     </a>
@@ -182,9 +182,13 @@ export const HomeSection = () => {
                                                 rotate: [0, -10, 10, -10, 0],
                                                 transition: { duration: 0.5 },
                                             }}
-                                            className={`mx-auto bg-gradient-to-br ${skill.colors} inline-block p-2 rounded-full`}
+                                            className="relative w-14 h-14 mx-auto mb-2"
                                         >
-                                            <Icon size={24} />
+                                            <div className={`absolute top-0 right-0 w-11 h-11 bg-gradient-to-br ${skill.colors} rounded-xl`} />
+                                            
+                                            <div className="absolute bottom-0 left-0 w-11 h-11 bg-white/40 dark:bg-black/30 backdrop-blur-[6px] rounded-xl border border-white/50 dark:border-white/20 flex items-center justify-center shadow-lg">
+                                                <Icon size={22} className="text-gray-900 dark:text-white drop-shadow-sm" />
+                                            </div>
                                         </motion.div>
                                         <p className="hidden md:block text-[11px] font-medium mt-1">
                                             {skill.name}
@@ -251,23 +255,34 @@ export const HomeSection = () => {
                                         </p>
 
                                         {sec.title === "Project Showcase" && (
-                                            <div className="hidden mt-6 md:grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                                {displayedProjects.map((project) => (
-                                                    <div
-                                                        key={project.slug}
-                                                        onClick={(e) => {
-                                                            e.preventDefault();
-                                                            router.push(`/projects/${project.slug}`);
-                                                        }}
-                                                        className="cursor-target"
+                                            <div className="hidden md:block mt-6 relative h-[160px]">
+                                                <AnimatePresence>
+                                                    <motion.div
+                                                        key={displayedProjects.map(p => p.slug).join(',')}
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 1 }}
+                                                        exit={{ opacity: 0 }}
+                                                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                                                        className="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 gap-3"
                                                     >
-                                                        <img
-                                                            src={project.image}
-                                                            alt={project.title}
-                                                            className="rounded-lg h-[160px] w-full object-cover border hover:scale-105 transition-transform"
-                                                        />
-                                                    </div>
-                                                ))}
+                                                        {displayedProjects.map((project) => (
+                                                            <div
+                                                                key={project.slug}
+                                                                onClick={(e) => {
+                                                                    e.preventDefault();
+                                                                    router.push(`/projects/${project.slug}`);
+                                                                }}
+                                                                className="cursor-target"
+                                                            >
+                                                                <img
+                                                                    src={project.image}
+                                                                    alt={project.title}
+                                                                    className="rounded-lg h-[160px] w-full object-cover border hover:scale-105 transition-transform"
+                                                                />
+                                                            </div>
+                                                        ))}
+                                                    </motion.div>
+                                                </AnimatePresence>
                                             </div>
                                         )}
                                     </CardContent>

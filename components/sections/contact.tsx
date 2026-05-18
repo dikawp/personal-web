@@ -1,8 +1,9 @@
-'use client';
-import { motion } from 'framer-motion';
-import { FaInstagram, FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
+"use client";
+import { motion } from "framer-motion";
+import { FaInstagram, FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
 import { ImArrowUpRight2 } from "react-icons/im";
-import { SiGmail } from 'react-icons/si';
+import { SiGmail } from "react-icons/si";
+import ProfileCard from "../ProfileCard";
 
 const contacts = [
   {
@@ -52,32 +53,50 @@ export const ContactSection = () => {
       <p className="mb-8">Let&apos;s get in touch</p>
       <hr className="border-t border-dashed border-gray-400 my-5" />
 
-      {/* Grid */}
-      <div className="grid md:grid-cols-2 gap-6 item">
-        {contacts.map((c, i) => (
-          <a
-            key={i}
-            href={c.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`cursor-target relative rounded-sm p-4 flex flex-col justify-between bg-gradient-to-r ${c.bg} text-white hover:text-slate-200 hover:scale-[1.02] transition-transform`}
-          >
-            {/* Text */}
-            <div>
-              <h3 className="text-xl font-semibold mb-1">{c.title}</h3>
-              <p className="text-sm opacity-80">{c.desc}</p>
-            </div>
+      <div className="grid md:grid-cols-2 flex justify-center md:justify-start">
+        <div className="hidden md:block">
+          <ProfileCard
+            name="Ramadika Wijaya P.S"
+            title="Website Developer"
+            handle="dikawp"
+            status="Available for Hire"
+            contactText="Contact Me"
+            avatarUrl="/image/foto_rmv.png"
+            miniAvatarUrl="/image/tes.webp"
+            showUserInfo={true}
+            enableTilt={true}
+            enableMobileTilt={false}
+            onContactClick={() => window.open("mailto:ramadika380@gmail.com")}
+            behindGlowColor="rgba(125, 190, 255, 0.67)"
+            iconUrl="/assets/demo/iconpattern.png"
+            behindGlowEnabled
+            innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+          />
+        </div>
 
-            {/* Button & Icon */}
-            <div className="flex items-center justify-between mt-4">
-              <span className="bg-white text-black text-sm px-3 py-2 rounded-md font-medium hover:opacity-80">
-                {c.btn} <ImArrowUpRight2 className="inline ml-1" />
-              </span>
-              {c.icon}
-            </div>
-          </a>
-        ))}
+        <div className="grid md:grid-cols-1 gap-8">
+          {contacts.map((c, i) => (
+            <a
+              key={i}
+              href={c.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`cursor-target relative rounded-xl p-4 flex flex-col justify-between bg-gradient-to-r ${c.bg} text-white hover:text-slate-200 hover:scale-[1.02] transition-transform ${c.title === "Get in Touch" ? "md:hidden" : ""}`}
+            >
+              {/* Text */}
+              <div>
+                <h3 className="text-xl font-semibold mb-1">{c.title}</h3>
+                <p className="text-sm opacity-80">{c.desc}</p>
+              </div>
+
+              {/* Button & Icon */}
+              <div className="flex items-center justify-between">{c.icon}</div>
+            </a>
+          ))}
+        </div>
       </div>
+
+      {/* Grid */}
       <hr className="border-t border-dashed border-gray-400 my-5" />
 
       {/* Download CV Section */}
@@ -91,7 +110,8 @@ export const ContactSection = () => {
           <div>
             <h3 className="text-2xl font-semibold mb-2">Download CV</h3>
             <p className="text-sm opacity-90">
-              Access my latest curriculum vitae for more details about my background and experiences.
+              Access my latest curriculum vitae for more details about my
+              background and experiences.
             </p>
           </div>
           <FaDownload className="text-white text-4xl ml-4" />
