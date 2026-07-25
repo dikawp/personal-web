@@ -21,9 +21,11 @@ import {
     SiRoboflow,
     SiGit,
     SiNextdotjs,
-    SiVite
+    SiVite,
+    SiDocker,
+    SiPostman
 } from "react-icons/si";
-import { TbBrandFramerMotion, TbBrandCSharp, TbBrandNpm } from "react-icons/tb";
+import { TbBrandFramerMotion, TbBrandCSharp } from "react-icons/tb";
 import { MapPinHouse, User, Briefcase, Award, Mail, LayoutPanelLeft } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from "@/components/ui/button";
@@ -70,10 +72,10 @@ export const HomeSection = () => {
         { name: "Firebase", icon: SiFirebase, colors: "from-yellow-400 to-orange-500" },
         { name: "Figma", icon: SiFigma, colors: "from-pink-400 to-purple-500" },
         { name: "Roboflow", icon: SiRoboflow, colors: "from-blue-400 to-blue-500" },
+        { name: "postman", icon: SiPostman, colors: "from-orange-700 to-orange-400" },
         { name: "Expo", icon: SiExpo, colors: "from-gray-400 to-gray-600" },
-        { name: "npm", icon: TbBrandNpm, colors: "from-red-500 to-red-500" },
         { name: "Git", icon: SiGit, colors: "from-orange-500 to-red-500" },
-        { name: "Github", icon: FaGithub, colors: "from-slate-500 to-slate-500" },
+        { name: "Docker", icon: SiDocker, colors: "from-cyan-500 to-blue-500" },
     ];
 
     const sections = [
@@ -162,7 +164,7 @@ export const HomeSection = () => {
                     <h2 className="text-2xl md:text-2xl font-semibold ms-2">Skills</h2>
                 </div>
 
-                <div className="grid grid-cols-6 gap-4">
+                <div className="grid grid-cols-[repeat(6,44px)] justify-center gap-x-4 gap-y-8 md:grid-cols-6 md:gap-4">
                     {skills.map((skill, index) => {
                         const Icon = skill.icon;
                         return (
@@ -176,17 +178,17 @@ export const HomeSection = () => {
                                 className="group"
                             >
                                 <Card className="bg-transparent shadow-none border-0 md:border md:shadow-sm md:hover:border-slate-600 transition-all">
-                                    <CardContent className="p-2 md:p-4 text-center">
+                                    <CardContent className="p-0 md:p-4 text-center">
                                         <motion.div
                                             whileHover={{
                                                 rotate: [0, -10, 10, -10, 0],
                                                 transition: { duration: 0.5 },
                                             }}
-                                            className="relative w-14 h-14 mx-auto mb-2"
+                                            className="relative w-11 h-11 md:w-14 md:h-14 mx-auto md:mb-2"
                                         >
-                                            <div className={`absolute top-0 right-0 w-11 h-11 bg-gradient-to-br ${skill.colors} rounded-xl`} />
+                                            <div className={`hidden md:block absolute top-0 right-0 w-11 h-11 bg-gradient-to-br ${skill.colors} rounded-xl`} />
                                             
-                                            <div className="absolute bottom-0 left-0 w-11 h-11 bg-white/40 dark:bg-black/30 backdrop-blur-[6px] rounded-xl border border-white/50 dark:border-white/20 flex items-center justify-center shadow-lg">
+                                            <div className="absolute inset-0 md:inset-auto md:bottom-0 md:left-0 w-11 h-11 bg-white/40 dark:bg-black/30 backdrop-blur-[6px] rounded-xl border border-white/50 dark:border-white/20 flex items-center justify-center shadow-lg">
                                                 <Icon size={22} className="text-gray-900 dark:text-white drop-shadow-sm" />
                                             </div>
                                         </motion.div>

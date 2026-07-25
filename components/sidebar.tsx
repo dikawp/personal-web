@@ -209,7 +209,7 @@ function SidebarContent({
                         <FaGithub size={24} className="ms-2 hover:text-slate-900 dark:hover:text-slate-100" />
                     </Link>
                 </div>
-                <p>© 2025 Ramadika Wijaya</p>
+                <p>© {new Date().getFullYear()} Ramadika Wijaya</p>
                 <p>All rights reserved.</p>
             </div>
         </>

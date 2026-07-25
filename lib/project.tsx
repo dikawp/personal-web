@@ -17,12 +17,29 @@ import {
   SiRoboflow,
   SiFlask,
   SiNextdotjs,
+  SiPostgresql,
+  SiSupabase,
+  SiShadcnui,
 } from "react-icons/si";
 import { ChevronsUp } from "lucide-react";
 import { TbBrandMysql, TbBrandCSharp } from "react-icons/tb";
 import { LuBird } from "react-icons/lu";
 
 export const projects = [
+  {
+    slug: "spotAttend",
+    title: "SpotAttend",
+    description:
+      "SpotAttend is an attendance management system that provides HR insights, precise geolocation, and detailed attendance records to streamline workforce management.",
+    image: "/projects/spotattend.webp",
+    tech: [
+      <SiLaravel key="laravel" />,
+      <SiTailwindcss key="tailwind" />,
+      <SiPostgresql key="postgre" />,
+    ],
+    link: "/projects/spotAttend",
+    github: "https://github.com/dikawp/SpotAttend",
+  },
   {
     slug: "compro-rajawali",
     title: "Company Profile - RAJAWALI CHAKTI UTAMA",
@@ -32,6 +49,21 @@ export const projects = [
     tech: [<SiLaravel key="nextjs" />, <SiTailwindcss key="tailwind" />],
     link: "/projects/compro-rajawali",
     demo: "https://ptrcu.com/",
+  },
+  {
+    slug: "MyDuitGua",
+    title: "MyDuitGua",
+    description:
+      "MyDuitGua is a personal finance management platform that empowers users to organize their finances by tracking income and expenses, managing budgets, monitoring debts and receivables, and generating detailed financial reports for smarter financial decisions.",
+    image: "/projects/mdgw.webp",
+    tech: [
+      <SiNextdotjs key="nextjs" />,
+      <SiTailwindcss key="tailwind" />,
+      <SiShadcnui key="shadcn" />,
+      <SiSupabase key="supabase" />,
+    ],
+    link: "/projects/MyDuitGua",
+    demo: "https://my-duits.vercel.app/login",
   },
   {
     slug: "kana-learning",
